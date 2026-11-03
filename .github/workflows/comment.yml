@@ -1,0 +1,14 @@
+name: PR Comment E2E
+
+on:
+  workflow_run:
+    workflows: [Test]
+    types:
+      - completed
+
+permissions:
+  actions: read
+
+jobs:
+  test:
+    uses: bgd-labs/github-workflows/.github/workflows/comment.yml@main
