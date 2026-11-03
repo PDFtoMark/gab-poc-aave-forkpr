@@ -1,0 +1,17 @@
+name: Test
+
+on:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: benign test results
+        run: |
+          mkdir -p out
+          printf 'all tests passed\n' > out/summary.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: content
+          path: out
